@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-router.get('/',(request,response)=>{
-    response.send('List of all to-do items')
-})
+const {getAllToDoItems,createANewToDoItem} = require('../controllers/todo_items')
+router.route('/').get(getAllToDoItems).post(createANewToDoItem)
 module.exports = router
